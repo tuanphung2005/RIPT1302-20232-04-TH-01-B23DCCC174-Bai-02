@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="background-color: white;">Trang quản trị</h1>
+    <table>
+
+    </table>
+    <table id="studentTable">
+        <tr>
+            <th>STT</th>
+            <th>Mã sinh viên</th>
+            <th>Tên sinh viên</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>SDT</th>
+            <th>Email</th>
+            <th>Thành tích</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <form id="studentForm">
+                <th>Tự động</th>
+                <th><input type="text" id="student_id" placeholder="Mã sinh viên"></th>
+                <th><input type="text" id="name" placeholder="Tên"></th>
+                <th><input type="date" id="date" placeholder="Tuổi"></th>
+                <th><input type="text" id="address" placeholder="Địa chỉ"></th>
+                <th><input type="text" id="phone" placeholder="SDT"></th>
+                <th><input type="email" id="email" placeholder="Email"></th>
+                <th><input type="text" id="ach" placeholder="Thành tích"></th>
+                <th><input type="submit" value="Thêm mới" onclick="newstu()"></th>
+            </form>
+        </tr>
+    </table>
+    <script src="quantri.js"></script>
+</body>
+</html>
