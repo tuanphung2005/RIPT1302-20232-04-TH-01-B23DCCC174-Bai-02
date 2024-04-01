@@ -42,7 +42,7 @@ function editStudent(index) {
         </tr>
         <tr>
             <form id="studentForm">
-                <th>Autofill</th>
+                <th>Tự động</th>
                 <th><input type="text" id="student_id" placeholder="Mã sinh viên"></th>
                 <th><input type="text" id="name" placeholder="Tên"></th>
                 <th><input type="date" id="date" placeholder="Tuổi"></th>
