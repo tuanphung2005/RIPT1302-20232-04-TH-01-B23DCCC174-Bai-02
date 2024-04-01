@@ -14,17 +14,52 @@ function deleteStudent(index) {
 
 function editStudent(index) {
     let student = students[index];
-    let student_id = prompt("Nhập mã sinh viên mới", student.student_id);
-    let name = prompt("Nhập tên mới", student.name);
-    let date = prompt("Nhập tuổi mới", student.date);
-    let address = prompt("Nhập địa chỉ mới", student.address);
-    let phone = prompt("Nhập số điện thoại mới", student.phone);
-    let email = prompt("Nhập email mới", student.email);
-    let ach = prompt("Nhập lớp học mới", student.ach);
-    students[index] = {name: name, student_id: student_id, date: date, address: address, phone: phone, email: email, ach: ach};
-    updateTable();
+
+
+    let student_id = document.getElementById("edit_student_id");
+    let name = document.getElementById("edit_name");
+    let date = document.getElementById("edit_date");
+    let address = document.getElementById("edit_address");
+    let phone = document.getElementById("edit_phone");
+    let email = document.getElementById("edit_email");
+    let ach = document.getElementById("edit_ach");
+
+
+    student_id.value = student.student_id;
+    name.value = student.name;
+    date.value = student.date;
+    address.value = student.address;
+    phone.value = student.phone;
+    email.value = student.email;
+    ach.value = student.ach;
+
+    document.getElementById("editStudentForm").dataset.index = index;
+
+    document.getElementById("editStudentForm").style.display = "block";
 }
 
+document.getElementById("editStudentForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let index = this.dataset.index;
+
+    let student_id = document.getElementById("edit_student_id").value;
+    let name = document.getElementById("edit_name").value;
+    let date = document.getElementById("edit_date").value;
+    let address = document.getElementById("edit_address").value;
+    let phone = document.getElementById("edit_phone").value;
+    let email = document.getElementById("edit_email").value;
+    let ach = document.getElementById("edit_ach").value;
+
+
+    students[index] = {name: name, student_id: student_id, date: date, address: address, phone: phone, email: email, ach: ach};
+
+
+    document.getElementById("editStudentForm").style.display = "none";
+
+    updateTable();
+});
 
  function updateTable() {
     let table = document.getElementById("studentTable");
